@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import PostInner from '../../components/PostInner';
 import { fetchOnePost } from '../../store/actions/postAction';
 import GlobalStyle from '../../styles/global';
+import { Container } from '../../styles/main';
 
 const PostDetailView = () => {
     const router = useRouter();
@@ -20,7 +21,11 @@ const PostDetailView = () => {
     let postContent;
 
     if (loading) {
-        postContent = <h2>Loading...</h2>;
+        postContent = (
+            <Container>
+                <h2>Loading...</h2>
+            </Container>
+        );
     } else {
         postContent = <PostInner post={post} />;
     }
