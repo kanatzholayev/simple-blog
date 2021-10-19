@@ -9,13 +9,14 @@ type Props = {
 };
 
 const AddPost: React.FC<Props> = ({ savePost }) => {
-    const [formData, setFormData] = React.useState();
+    const [formData, setFormData] = React.useState({});
 
     const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
         setFormData({
             ...formData,
             [e.currentTarget.id]: e.currentTarget.value,
         });
+        console.log(formData);
     };
 
     return (
